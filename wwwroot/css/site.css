@@ -1,0 +1,271 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #F9F9F9;
+    overflow-x: hidden;
+}
+
+
+.titleSection {
+    width: auto;
+    height: 90px;
+    text-align: center;
+    background-color: #2F5D8C;
+    color: white;
+}
+
+.mainTitle h1 {
+    font-family: 'Annie Use Your Telescope';
+    color: white;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.titleSection a {
+    text-decoration: none;
+}
+
+.active {
+    background-color: #D55E2D;
+}
+
+.nav-side {
+    height: 100%;
+    width: 0;
+    background-color: #2F5D8C;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.NavigationSection .nav-side a:hover {
+    color: black;
+}
+
+.NavigationSection .nav-side a {
+    padding: 8px 8px 8px 32px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-side .closeNavButton {
+    position: absolute;
+    top: 0;
+    margin-left: 165px;
+    font-size: 40px;
+}
+
+.NavigationSection .hamburgerIcon {
+    position: relative;
+    color: #D55E2D;
+    top: -76px;
+    left: 10px;
+    cursor: pointer;
+    width: 60px;
+}
+
+
+.slideShow {
+    background-color: #A0B3C1;
+    width: 70%;
+    height: 300px;
+    position: relative;
+    left: 200px;
+    border-radius: 6px;
+}
+
+#rightArrow {
+    font-size: 50px;
+    position: relative;
+    left: 54%;
+    top: 10%;
+}
+
+#leftArrow {
+    font-size: 50px;
+    position: relative;
+    right: 54%;
+    top: 36%;
+}
+
+.darkMode {
+    background-color: black;
+    color: white;
+}
+
+.toggleSwitch {
+    position: relative;
+    left: 48%;
+    top: -50px;
+}
+
+
+    .toggleSwitch .slider {
+        -webkit-appearance: none;
+        position: relative;
+        width: 50px;
+        height: 30px;
+        border-radius: 30px;
+        background-color: grey;
+        transition: .4s;
+        cursor: pointer;
+    }
+
+.slider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: white;
+    transition: left .3s;
+}
+
+.slider:checked {
+    background-color: lightgreen;
+}
+
+    .slider:checked::after {
+        left: 70%;
+    }
+
+.footerSection {
+    width: 84%;
+    margin-left: 8%;
+    padding: 10px;
+    background-color: #2F5D8C;
+    border-radius: 10px;
+    height: 300px;
+}
+
+    .footerSection .CopyRightInfo {
+        color: white;
+    }
+
+.books_read_type {
+    background-color: lightslategray;
+    width: 94%;
+    margin-left: 46px;
+    height: 200px;
+}
+
+.books_read_Fiction {
+    background-color: lightslategray;
+    width: 94%;
+    margin-left: 46px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.books_read_NonFiction {
+    background-color: lightslategray;
+    width: 94%;
+    margin-left: 46px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.title_previews {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: orange;
+}
+
+.timeline_intro img {
+    width: 120%;
+    position: relative;
+    right: 100px;
+    top: -49px;
+    opacity: 0.7;
+    height: 800px;
+}
+
+.timeline_intro h2 {
+    font-family: 'Courier New';
+    font-weight: bold;
+    color: white;
+    position: relative;
+    top: 150px;
+    font-size: 54px;
+    text-align: center;
+    left: 0px;
+}
+
+.timeline_intro p {
+    font-family: 'Courier New';
+    font-weight: 100;
+    color: white;
+    position: relative;
+    top: 150px;
+    font-size: 25px;
+    text-align: center;
+    left: 0px;
+}
+
+.rectangleShape {
+    background-color: #2F5D8C;
+    width: 62%;
+    height: 550px;
+    position: relative;
+    top: -600px;
+    opacity: 0.9;
+    border-top-right-radius: 300px;
+}
+
+.form-floating
+{
+    margin-left:440px;
+    margin-bottom:20px;
+    width:110%;
+}
+
+.UserManagement 
+{
+    background-color:white;
+}
+
+.btn-register
+{
+    position:relative;
+    padding:10px;
+    top:10px;
+    margin-bottom:50px;
+    font-size:20px;
+    background-color:orange;
+    border-radius:6px;
+    width:80%;
+    border:none;
+    left:500px;
+}
+
+.btn-register:hover {
+    background-color: darkorange;
+}
+.RegisterTitle {
+    position: relative;
+    left: 500px;
+    font-family: sans-serif 'Modern No. 20';
+}

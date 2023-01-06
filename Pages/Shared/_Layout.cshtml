@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bookclub</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Bookclub.styles.css" asp-append-version="true" />
+    <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <section class="titleSection">
+            <a href="/Index" class="mainTitle">
+                <h1>Between 2 lines</h1>
+            </a>
+
+            <label class="toggleSwitch">
+                <input type="checkbox" class=" slider" onchange="enableDarkMode()" />
+            </label>
+
+        </section>
+        <section class="NavigationSection">
+            <h2 onclick="openNavigationSide()" class="hamburgerIcon">&#9776;</h2>
+            
+            <nav class="nav-side" id="sideNav">
+                <a href="javascript:void(0)" class="closeNavButton" onclick="closeNavigationSide()">&times;</a>
+                <a class=@ViewData["HomeAct"] href="/Index">Home</a>
+                <a href="/Mentalhealth">MentalHealth</a>
+                <a href="/FAQ">FAQs</a>
+                <a class=@ViewData["TimeLineAct"] href="/TimeLine">Books read</a>
+                <a href="/Contact">Contact</a>
+                <a href="/About">About</a>
+
+                <!--Member pages -->
+                <a href="/Timer">Timer</a>
+                <a href="/Meetings">Meetings</a>
+
+                <!--Admin pages -->
+                <a href="/AdminDash">Admin</a>
+                <div class=" UserManagement"> <partial name="_LoginPartial" /> </div>
+               
+           
+               
+            </nav>
+        </section>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footerSection">
+        <p class=" CopyRightInfo">&copy; 2022 - Between 2 lines, all rights reserved</p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
