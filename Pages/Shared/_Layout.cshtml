@@ -27,11 +27,11 @@
             <nav class="nav-side" id="sideNav">
                 <a href="javascript:void(0)" class="closeNavButton" onclick="closeNavigationSide()">&times;</a>
                 <a class=@ViewData["HomeAct"] href="/Index">Home</a>
-                <a href="/Mentalhealth">MentalHealth</a>
-                <a href="/FAQ">FAQs</a>
+                <a class=@ViewData["HomeAct"] href ="/Mentalhealth">MentalHealth</a>
+                <a class=@ViewData["FAQAct"] href="/FAQ">FAQs</a>
                 <a class=@ViewData["TimeLineAct"] href="/TimeLine">Books read</a>
-                <a href="/Contact">Contact</a>
-                <a href="/About">About</a>
+                <a class=@ViewData["HomeAct"] href ="/Contact">Contact</a>
+                <a class=@ViewData["HomeAct"] href ="/About">About</a>
 
                 <!--Member pages -->
                 <a href="/Timer">Timer</a>

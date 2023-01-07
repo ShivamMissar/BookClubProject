@@ -96,20 +96,23 @@ body {
 
 #rightArrow {
     font-size: 50px;
+    cursor:pointer;
     position: relative;
-    left: 54%;
-    top: 10%;
+    left: 100%;
+    top: 1%;
 }
 
 #leftArrow {
     font-size: 50px;
     position: relative;
-    right: 54%;
-    top: 36%;
+    right: 5%;
+    cursor:pointer;
+    top: 28%;
 }
 
 .darkMode {
     background-color: black;
+  
     color: white;
 }
 
@@ -268,4 +271,26 @@ body {
     position: relative;
     left: 500px;
     font-family: sans-serif 'Modern No. 20';
+}
+
+.questionToBeAnswered {
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    background-color: #A0B3C1;
+    transition:.3s;
+    width:100%;
+}
+
+ .questionToBeAnswered:hover {
+        background-color: #D55E2D;
+    }
+
+.answerForQuestions
+{
+    overflow:hidden;
+    /* should not be displayed until clicked*/
+    display:none;
+    
+
 }

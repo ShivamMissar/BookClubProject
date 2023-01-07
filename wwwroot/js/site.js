@@ -5,6 +5,7 @@
 function openNavigationSide() {
     // this will extend the width of the navigation when clicked on
     document.getElementById("sideNav").style.width = "250px";
+
 }
 
 function closeNavigationSide() {
@@ -18,3 +19,22 @@ function enableDarkMode() {
     // Once retrieved, need to access the class list and applies that CSS class when clicked.
     captureWholeScreen.classList.toggle("darkMode");
 }
+
+
+
+var accordian = document.getElementsByClassName("questionToBeAnswered"); // this is  an array and therefore, the contents of the array need to be traversed.
+for (i = 0; i < accordian.length; i++)
+{
+    accordian[i].addEventListener("click", function ()
+    {
+        var contentBox = this.nextElementSibling; // this part was taken from https://www.w3schools.com/howto/howto_js_accordion.asp
+        // if the content box has already been opened then if clicked again it should hide the box else display the content inside.       
+        if (contentBox.style.display === "block")
+        {
+            contentBox.style.display = "none";
+        } else {
+            contentBox.style.display = "block";
+        }
+    });
+}
+
