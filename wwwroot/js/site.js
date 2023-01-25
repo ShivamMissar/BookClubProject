@@ -18,6 +18,7 @@ function enableDarkMode() {
     var captureWholeScreen = document.body;
     // Once retrieved, need to access the class list and applies that CSS class when clicked.
     captureWholeScreen.classList.toggle("darkMode");
+   
 }
 
 
@@ -38,3 +39,22 @@ for (i = 0; i < accordian.length; i++)
     });
 }
 
+
+
+
+
+document.getElementById('accordian').addEventListener("click", changeArrow);
+
+function changeArrow() {
+    var Down = document.getElementById('arrowDown');
+    Down.style.display = "Block";
+    var Up = document.getElementById('arrowUp');
+    if (Down.style.display == "None") {
+        Up.style.display = "None";
+        Down.style.display = "Block";
+    }
+    else {
+        Down.style.display = "None";
+        Up.style.display = "Block";
+    }
+}

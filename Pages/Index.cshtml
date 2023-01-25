@@ -5,16 +5,32 @@
     ViewData["HomeAct"] = "active";
 }
 
+<section class="dailyInsperation">
+    
+    <img src="~/images/introtimeline.jpg" /> @*photo taken from:https://unsplash.com/photos/mo3FOTG62ao*@
+    <div class= "dailyQuotesBackground">
+        <h2 class="dailyTitle">Your daily Inspiration</h2>
+        <hr />
+        <h3 class=" dailyQuotes"></h3>
+    </div>
+ 
+
+</section>
+
+@*
 <section class="slideShow">
     <a><p id="leftArrow">&#x2190;</p></a>
     <a><p id="rightArrow">&#x2192;</p></a>
 </section>
 
-
+*@
 <section class="processOfJoining">
     <h2>Already have an account? <a href="Identity/Account/Login"> Login here </a> </h2>
 </section>
+<hr />
 
 
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <div class="elfsight-app-8abc5025-bb50-42e1-bff3-a974133239a6"></div> <!-- used via: https://apps.elfsight.com/panel/applications/google-reviews/ -->
+
+<script src="~/js/quotes.js" asp-append-version="true"></script>

@@ -17,6 +17,7 @@ body {
     margin-bottom: 60px;
     background-color: #F9F9F9;
     overflow-x: hidden;
+    scroll-behavior:smooth;
 }
 
 
@@ -24,15 +25,18 @@ body {
     width: auto;
     height: 90px;
     text-align: center;
-    background-color: #2F5D8C;
-    color: white;
+    background-color:#2f5d8c;
+    color: #f9f9f9;
 }
 
 .mainTitle h1 {
-    font-family: 'Annie Use Your Telescope';
-    color: white;
-    font-size: 50px;
+    font-family: 'Brittany Signature', sans-serif;
+    color: #f9f9f9;
+   position:relative;
+   top:20px;
+    font-size: 45px;
     text-decoration: none;
+    text-align:center;
 }
 
 .titleSection a {
@@ -40,13 +44,14 @@ body {
 }
 
 .active {
-    background-color: #D55E2D;
+    background-color: #a0b3c1;
 }
 
 .nav-side {
     height: 100%;
     width: 0;
-    background-color: #2F5D8C;
+    background-color: #2f5d8c;
+   
     position: fixed;
     z-index: 1;
     top: 0;
@@ -77,7 +82,7 @@ body {
 
 .NavigationSection .hamburgerIcon {
     position: relative;
-    color: #D55E2D;
+    color: #F9F9F9;
     top: -76px;
     left: 10px;
     cursor: pointer;
@@ -146,7 +151,46 @@ body {
     background-color: white;
     transition: left .3s;
 }
+.dailyInsperation {
+    margin-bottom: 5%;
+    width: 100%;
+}
+.dailyQuotes {
+    font-family: 'Californian FB';
+    position: relative;
+    color: black;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    top: 100px;
+    left: 10px;
+    font-size: 35px;
+    color: white;
+    font-weight:100
+}
+.dailyInsperation img {
+    width: 120%;
+    position: relative;
+    right:10%;
+}
 
+.dailyTitle {
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+}
+.dailyQuotesBackground {
+    background-color: #2F5D8C;
+    width: 82%;
+    height: 350px;
+    position: relative;
+    
+    top: -800px;
+    left: 100px;
+    opacity: 0.9;
+    border: 4px solid black;
+    border-radius:100px;
+}
 .slider:checked {
     background-color: lightgreen;
 }
@@ -245,23 +289,51 @@ body {
     width:110%;
 }
 
-.UserManagement 
-{
-    background-color:white;
+.login-form {
+  position:relative;
+  left:220%;
+  top:-600px;
 }
 
-.btn-register
-{
-    position:relative;
-    padding:10px;
-    top:10px;
-    margin-bottom:50px;
-    font-size:20px;
-    background-color:orange;
-    border-radius:6px;
-    width:80%;
-    border:none;
-    left:500px;
+.loginImage img /* taken from: https://unsplash.com/photos/TamMbr4okv4 */ {
+    width: 75%;
+    position: relative;
+    right: 111px;
+    top: -46px;
+}
+.btn-register-login {
+    position: relative;
+    padding: 10px;
+    top: -600px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    background-color: orange;
+    border-radius: 6px;
+    width: 80%;
+    border: none;
+    left: 230%;
+}
+
+.accountManagement {
+    position: relative;
+    left: 250%;
+    top:-650px;
+}
+ .accountManagement a {
+     text-decoration:none;
+
+ }
+.btn-register {
+    position: relative;
+    padding: 10px;
+    top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    background-color: orange;
+    border-radius: 6px;
+    width: 80%;
+    border: none;
+    left: 500px;
 }
 
 .btn-register:hover {
@@ -275,15 +347,24 @@ body {
 
 .questionToBeAnswered {
     cursor: pointer;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
     border: none;
-    background-color: #A0B3C1;
-    transition:.3s;
-    width:100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    transition: .3s;
+    width: 100%;
+    text-align: left;
+}
+.questionToBeAnswered h2 {
+    font-size:24px;
+    margin-top:10px;
+    
+   
 }
 
  .questionToBeAnswered:hover {
-        background-color: #D55E2D;
+        color: #D55E2D;
     }
 
 .answerForQuestions
@@ -292,5 +373,204 @@ body {
     /* should not be displayed until clicked*/
     display:none;
     
+}
 
+#arrowDown
+{
+    position:relative;
+    left:96%;
+    top:-30px;
+    font-size:23px;
+    
+    
+}
+#arrowUp {
+    position: relative;
+    left: 96%;
+    top: -30px;
+    font-size: 23px;
+    display:none;
+}
+.minus
+{
+    display:none;
+}
+
+.processOfJoining h2{
+    font-family: sans-serif 'Modern No. 20';
+    text-align:center;
+    font-size:24px;
+    padding:10px;
+
+}
+.processOfJoining a 
+{
+   font-family: sans-serif 'Modern No. 20';
+   text-decoration:none;
+}
+
+
+/* MENTAL HEALTH CSS */
+.mh_intro
+{
+    
+    background-color: #A0B3C1;
+    height:500px;
+    width:110%;
+    position:relative;
+    left:-60px;
+    border-radius:10px;
+}
+
+
+.mh_intro img{ /* image from: */
+   width:50%;
+   height:auto;
+   border-radius:300px;
+   position:relative;
+   left:700px;
+   top:-500px; 
+   padding:10px;
+}
+
+
+.mh_intro h1 {
+   
+    height: 500px;
+    width:50%;
+    padding:10px;
+}
+
+.mh_lonely
+{
+    height:500px;
+    
+
+}
+.mh_lonely h2 {
+    text-align: left;
+    font-size: 30px;
+    font-weight:700;
+    width:32%;
+    padding:5px;
+    margin-top:100px;
+}
+
+.mh_lonely p
+{
+    text-align:justify;
+    font-family:sans-serif;
+}
+
+.mh_support
+{
+    height:500px;
+}
+.mh_support h4 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 100px;
+
+}
+.mh_support p 
+{
+    text-align:justify;
+    font-family:sans-serif;
+    text-align:center;
+}
+
+.mh_improve h4 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 100px;
+}
+
+.mh_improve 
+{
+    height:500px;
+}
+.mh_improve p {
+    text-align: justify;
+    font-family: sans-serif;
+    text-align: center;
+    font-size:20px;
+    }
+
+.mh_charities {
+    height: 500px;
+}
+
+.mh_charities h4 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 100px;
+}
+.mh_charities p {
+    text-align: justify;
+    font-family: sans-serif;
+    text-align: center;
+    font-size:20px;
+}
+
+.charity_logos img
+{
+    width:20%;
+    mix-blend-mode:multiply;
+    margin-left:10%;
+}
+
+.bottomLinks
+{
+    
+}
+.footerSection ul {
+    list-style-type:none;
+    margin:0; 
+    padding:0;
+    
+}
+.footerSection li {
+}
+.footerSection li a {
+        display: block;
+        text-decoration:none;
+        color:white;
+        text-align:center;
+        font-size:13px;
+
+}
+.footerSection li a:hover {
+        color: #D55E2D
+
+}
+
+.center_content
+{
+    padding:1px;
+    margin-right:50px;
+    margin-left:50px;
+    text-align:justify;
+    font-size:17px;
+    margin-bottom:50px;
+}
+.center_content h2{
+    text-align:center;
+   
+}
+.center_content h3 {
+    text-align: center;
+    font-family: sans-serif 'Modern No. 20';
+  
+
+}
+.modern_line {
+    border: 2px solid #D55E2D;
+  
+    
 }
