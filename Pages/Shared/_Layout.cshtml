@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using Bookclub.Models
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.RazorPages;
+@using Microsoft.EntityFrameworkCore;
+
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,7 +17,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bookclub.styles.css" asp-append-version="true" />
     <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
-    <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet"
+    <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -17,10 +26,17 @@
                 <h1>Between 2 lines</h1>
             </a>
 
-            <label class="toggleSwitch">
-                <input type="checkbox" class=" slider" onchange="enableDarkMode()" />
-            </label>
+            <select id="mood" class="moodDropDown"> 
+                <option selected disabled>Mood based background color</option>
+                <option value="White">Simplicity</option>
+                <option value="Blue">Relaxation</option>
+                <option value="Grey">Realism</option>
+                <option value="Pink">Friendliness</option>
+            </select>
+            
+          
 
+         
         </section>
         <section class="NavigationSection">
             <h2 onclick="openNavigationSide()" class="hamburgerIcon">&#9776;</h2>
@@ -34,14 +50,23 @@
                 <a class=@ViewData["ContactAct"] href ="/Contact">Contact</a>
                 <a class=@ViewData["AboutAct"] href="/About">About</a>
 
-                <!--Member pages -->
-                <a href="/Timer">Timer</a>
-                <a href="/Meetings">Meetings</a>
+                <!--Member pages but the admin can also access these pages. -->
+                @if (User.IsInRole("Member") && Context.User.Identity.IsAuthenticated == true || User.IsInRole("Admin") && Context.User.Identity.IsAuthenticated == true)
+                {
+                 <a href="/Timer">Timer</a>
+                 <a href="/Meetings">Meetings</a>
+                }
+               
+               
 
-                <!--Admin pages -->
-                <a href="/AdminDash">Admin</a>
-                <a class=@ViewData["LoginAct"] href="/Identity/Account/Login">Login</a>
-                <a class=@ViewData["RegisterAct"] href="Identity/Account/Register">Register</a>
+                <!--Admin pages only-->
+                @if (User.IsInRole("Admin") && Context.User.Identity.IsAuthenticated == true)
+                {
+                    <a href="/UserManagement">AdminPage</a>
+                }
+                
+                <partial name="_LoginPartial" />
+               
                
                
            

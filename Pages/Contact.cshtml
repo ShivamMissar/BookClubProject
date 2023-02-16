@@ -2,3 +2,28 @@
 @model Bookclub.Pages.ContactModel
 @{
 }
+
+<h1>Contact Form</h1>
+<div class="shadow-lg p-3 mb-5 emailSender">
+
+    <form method="post" id="contactTeam">
+
+        <label asp-for="@Model.subject"></label>
+        <input type="text" asp-for="@Model.subject" autofocus placeholder="Enter the subject of matter" />
+
+        <label asp-for="@Model.email"></label>
+        <input type="text" asp-for="@Model.email" autocomplete="on" placeholder="enter your email" />
+
+        <div class="bodyInput">
+            <label asp-for="@Model.body"></label>
+            <textarea asp-for="@Model.body" max="500" rows="5" cols="50" placeholder="Describe your issue here."></textarea>
+        </div>
+        
+
+
+        <input type="submit" />
+
+    </form>
+
+</div>
+

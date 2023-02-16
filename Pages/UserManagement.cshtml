@@ -3,4 +3,97 @@
 @{
     ViewData["Title"] = "User page";
     ViewData["UserMangeAct"] = "active";
+
+    
 }
+
+    <div class="NewRole">
+        <form method="post">
+            <label asp-for="@Model.newRoleName">Add New Role:</label>
+            <input asp-for="@Model.newRoleName" placeholder="Type a new role name here" />
+            <input type="submit" asp-page-handler="Creation" />
+           
+        </form>
+    </div>
+
+<div class="table-responsive">
+    <table class="table table-hover"> 
+        <thead>
+            <tr>
+                <th scope="col">Role Id</th>
+                <th scope="col">Role Names</th>
+                <th scope="col">Role Options</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+        
+            @{
+                foreach(var role in Model.Roles)
+                {
+                    <tr>
+                    <td>@role.Id</td>
+                    <td> @role.Name</td>
+                        <td>
+                            <a class="deleteRole" asp-page="/UserManagement" asp-route-id="@role.Id" asp-page-handler="Delete">Delete Role</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">User Id</th>
+                <th scope="col">Current User Email</th>
+                <th scope="col">Account Options</th>
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+
+            @{
+                foreach(var users in Model.Users)
+                {
+                    <tr>
+                        <td>@users.Id</td>
+                        <td>@users.Email</td>
+                        <td>
+                            <a class="deleteRole" asp-page="/UserManagement" asp-route-id="@users.Id" asp-page-handler="DeleteUser">Delete User</a>
+                        </td>
+                        <td>
+                        <form method="post" asp-page-handler="UpdatePassword" asp-route-id="@users.Id">
+                          <input class="userAccount" asp-for="@Model.newPassword" placeholder="Update password here...">
+                                <input class="userAccount" type="submit">
+                        </form>
+                        </td>
+
+                        <td>
+                            <form method="post" asp-page-handler="UpdateRole" asp-route-id="@users.Id">
+                            <input class="userAccount" asp-for="@Model.updateRoleName" placeholder="Update role here...">
+                            <input class="userAccount" type="submit">
+                        </form>
+                        </td>
+
+                    </tr>
+                }    
+            }
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+</div>

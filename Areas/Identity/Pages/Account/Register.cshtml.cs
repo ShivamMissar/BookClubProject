@@ -29,6 +29,7 @@ namespace Bookclub.Areas.Identity.Pages.Account
         private readonly IUserStore<AppUser> _userStore;
         private readonly IUserEmailStore<AppUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
@@ -36,6 +37,7 @@ namespace Bookclub.Areas.Identity.Pages.Account
             IUserStore<AppUser> userStore,
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
+            RoleManager<IdentityRole> roleManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -43,6 +45,7 @@ namespace Bookclub.Areas.Identity.Pages.Account
             _emailStore = GetEmailStore();
             _signInManager = signInManager;
             _logger = logger;
+            _roleManager = roleManager;
             _emailSender = emailSender;
         }
 
@@ -118,6 +121,23 @@ namespace Bookclub.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
+                var role = new IdentityRole();
+                if(!await _roleManager.RoleExistsAsync("Admin"))
+                    {
+                    role.Name = "Admin";
+                    await _roleManager.CreateAsync(role);
+                }
+
+                else if(!await _roleManager.RoleExistsAsync("Member"))
+                {
+                    role.Name = "Member";
+                    await _roleManager.CreateAsync(role);
+                }
+                else
+                {
+                    role.Name = "Visitor";
+                    await _roleManager.CreateAsync(role);
+                }
                 var user = CreateUser();
 
                 user.Firstname = Input.firstname;
@@ -125,6 +145,7 @@ namespace Bookclub.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                await _userManager.AddToRoleAsync(user, role.Name);
 
                 if (result.Succeeded)
                 {

@@ -51,7 +51,6 @@ body {
     height: 100%;
     width: 0;
     background-color: #2f5d8c;
-   
     position: fixed;
     z-index: 1;
     top: 0;
@@ -116,41 +115,37 @@ body {
 }
 
 .darkMode {
-    background-color: black;
-  
+    background-color:black;
     color: white;
+
+}
+.darkMode .table{
+        color: white;
+ }
+
+#lightMode {
+    background-color: #F9F9F9;
 }
 
-.toggleSwitch {
-    position: relative;
-    left: 48%;
-    top: -50px;
+#changeTheme
+{
+    position:relative;
+    left:500%;
+    top:-25px;
+    border:none;
+    background-color:white;
+    color:black;
+    border-radius:5px;
+    padding:3px;
+}
+
+#changeTheme:hover
+{
+    background-color:black;
+    color:white;
 }
 
 
-    .toggleSwitch .slider {
-        -webkit-appearance: none;
-        position: relative;
-        width: 50px;
-        height: 30px;
-        border-radius: 30px;
-        background-color: grey;
-        transition: .4s;
-        cursor: pointer;
-    }
-
-.slider::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    height: 1.25rem;
-    width: 1.25rem;
-    background-color: white;
-    transition: left .3s;
-}
 .dailyInsperation {
     margin-bottom: 5%;
     width: 100%;
@@ -169,6 +164,7 @@ body {
     font-weight:100
 }
 .dailyInsperation img {
+    
     width: 120%;
     position: relative;
     right:10%;
@@ -571,6 +567,230 @@ body {
 }
 .modern_line {
     border: 2px solid #D55E2D;
-  
+}
+
+.deleteRole {
+    padding: 10px;
+    text-decoration: none;
+    color: #D55E2D;
+    border-radius: 10px;
+}
+.deleteRole:hover
+{
+    color:red;
+}
+.NewRole
+{
+    width:100%;
+    position:relative;
+    left:10%;
+    margin:10px;
+}
+.NewRole label
+{
+    text-align:center;
+    font-size:21px;
+    padding-right:20px;
+}
+.NewRole input[type=text]
+{
+    width:50%;
+    font-size:18px;
+    border:1px solid black;
+    border-radius:10px;
+    padding:5px;
+}
+.NewRole input[type=submit] {
+    background-color: green;
+    border:none;
+    font-size:17px;
+    padding:7px;
+    color:white;
+    width:10%;
+    border-radius:5px;
+
+}
+.NewRole input[type=submit]:hover {
+    color:black;
+}
+
+.userAccount
+{
+    margin-top:10px;
+    font-size:14px;
+    border-radius:5px;
+    width:72%;
+    border:1px solid black;
+}
+
+
+input[type=submit] {
+    border-radius: 5px;
+    border: none;
+    width: 25%;
+    background-color: red;
+    padding:2.5px;
+    color:white;
+
+}
+
+.Ring {
+    background-color: #d8d8d6;
+    border-radius: 50%;
+    height: 550px;
+    width: 45%;
+    margin-left: 340px;
+    border: 4px solid #D55E2D;
+   
+}
+.hideInputs
+{
+    display:none;
+}
+.Ring input[type=number]
+{
+    margin-left:70px;
+    margin-top:100px;
+    padding:2px;
+    font-size:20px;
+    width:75%;
+    border:none;
+    border-radius:10px;
     
 }
+.Ring input[type=number]::placeholder {
+ font-size: 15px;
+  text-align: center;
+
+}
+
+.Ring p
+{
+   color:black;
+   font-size:50px;
+   margin-left:105px;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Ring button
+{
+    border:none;
+    margin-top:20px;
+    margin-left:200px;
+    padding:4px;
+    width:30%;
+    border-radius:7px;
+}
+.Ring button:hover 
+{
+    background-color:black;
+    color:white;
+
+}
+
+
+.emailSender {
+    background-color: #a0b3c1;
+    border-radius:3px;
+}
+.emailSender input[type=text] {
+    display: block;
+    margin-left:440px;
+    border:none;
+    padding:4px;
+    border-radius:3px;
+    font-size:17px;
+    width:32%;
+}
+
+.emailSender label
+{
+    padding:5px;
+    font-variant-caps:all-petite-caps;
+    font-size:20px;
+    margin-left:48%;
+}
+
+.emailSender input[type=text]:hover
+{
+    border: 2px solid black;
+}
+.emailSender textarea:hover {
+    border: 2px solid black;
+}
+.emailSender .bodyInput
+{
+    margin-bottom:50px;
+}
+
+.bodyInput textarea {
+    height: 80px;
+    margin-top:10px;
+    margin-left:438px;
+    border:none;
+    resize:none;
+    padding:10px;
+    border-radius:4px;
+}
+
+
+.emailSender input[type=submit]
+{
+    background-color:orange;
+    margin-left:38%;
+    color:black;
+    padding:5px;
+}
+.emailSender input[type=submit]:hover
+{
+    background-color: green;
+    color:white;
+}
+.emailSender input::placeholder
+{
+    font-size:14px;
+    text-align:center;
+}
+.emailSender textarea::placeholder {
+    font-size: 14px;
+    text-align: center;
+}
+/* MOOD color classes*/
+.Simplicity
+{
+    background-color:white;
+    color:black;
+}
+
+.Relaxation {
+    background-color: #43A6C6;
+}
+
+.Realism {
+    background-color: #c0c0c0;
+    color:black;
+}
+
+.Friendliness {
+    background-color: #ffc0cb;
+}
+
+.moodDropDown {
+    position: relative;
+    left: 42%;
+    top: -35%;
+    padding: 5px;
+    overflow: hidden;
+    cursor:pointer;
+    color: black;
+    width: 210px;
+    outline:none;
+}
+
+moodDropDown:hover
+{
+    border:10px solid red;
+}
+
+
+
