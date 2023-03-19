@@ -1,4 +1,5 @@
 using MailKit.Security;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Build.Framework;
@@ -26,7 +27,8 @@ namespace Bookclub.Pages
         [System.ComponentModel.DataAnnotations.Required]
         public string body { get; set; }
 
-        private bool checker;
+       
+        public bool checker { get; set; }
 
 
         public void OnGet()
@@ -49,7 +51,6 @@ namespace Bookclub.Pages
             message.Subject= subject;
             message.Body= body;
 
-
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml=true; 
             client.EnableSsl= true;
@@ -59,11 +60,7 @@ namespace Bookclub.Pages
             checker = true;
             
             client.Dispose();
-
-            if(checker == true)
-            {
-                // return success message
-            }
+           
         }
     }
 }

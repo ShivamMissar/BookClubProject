@@ -1,0 +1,40 @@
+﻿@page
+@model Bookclub.Pages.TimelineModel
+@{
+    ViewData["Title"] = "Timeline of books read";
+    ViewData["TimeLineAct"] = "active";
+}
+
+<section class="timeline_intro">
+    <img src="~/images/timelinehero.jpg" alt=" Shows a pile of books which introduces the section for books read" /> <!--*taken from: https://unsplash.com/photos/LUGuCtvlk1Q-->
+    <div class="rectangleShape">
+    <h2>What we have read</h2>
+    <p>Here you will find all previous books read. They have been put into categories to help find that genre you are most intrested in.</p>
+    </div>
+</section>
+
+
+
+<section class="Non-fiction">
+    <h2>Non-Fiction</h2>
+    <a asp-page="/Nonfictioncshtml"><img src="~/images/genre2.jpg" />@*Image taken from:https://unsplash.com/photos/VrtEnvv3_sY*@</a>
+    
+</section>
+
+<section class="fiction">
+    <h2>Fiction</h2>
+    <a asp-page="/Fiction">
+        <img src="~/images/genre3.jpg" />@*Image taken from: https://unsplash.com/photos/PIOgkhaF3WA*@
+    </a>
+    
+</section>
+
+<section class="others">
+    <h2>Others</h2>
+    <a asp-page="/OtherGenres"><img src="~/images/genre1 .jpg" /> @*Image taken from: https://unsplash.com/photos/21DP3hytVHw *@</a>
+</section>
+
+
+
+
+

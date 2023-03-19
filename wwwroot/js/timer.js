@@ -1,9 +1,12 @@
-﻿const timer = document.getElementById('theTimer');
+﻿
+
+const timer = document.getElementById('theTimer');
 let interval;
 
 //stop start buttons for the timer.
 const stop = document.getElementById('stopTimerButton');
 const start = document.getElementById('startTimerButton');
+const reset = document.getElementById('resetTimerButton');
 
 // these are let because their values will be changed.
 
@@ -15,7 +18,7 @@ function startTimer() {
     let userSeconds = document.getElementById('seconds');
 
     // if all the values are 0 then set the values to be 0.
-    if (userHour == 0 && userMin == 0) {
+    if (userHour == 0 && userMin == 0 && userSeconds) {
         userHour.value = 0;
         userMin.value = 0;
         userSeconds.value = 0;
@@ -31,13 +34,18 @@ function startTimer() {
         userSeconds.value = 59;
         userMin.value--;
     }
-    // this is the same case as above.
+    
     else if (userHour.value != 0 && userMin.value == 0) {
+        userHour.value -= 1;
+        if (userHour.value == 0) {
+            userHour.value = 0;
+        }
         userMin.value = 59;
         userMin.value--;
     }
 
-    return timer.innerHTML = `${userHour.value}:${userMin.value}:${userSeconds.value}`;
+
+    return timer.innerHTML = `${userHour.value + "h"}:${userMin.value + "m"}:${userSeconds.value + "s"}`;
 
 }
 
@@ -57,4 +65,12 @@ function hideFunction() {
     document.getElementById('hour').classList.toggle('hideInputs');
     document.getElementById('minute').classList.toggle('hideInputs');
     document.getElementById('seconds').classList.toggle('hideInputs');
+}
+let userHour = document.getElementById('hour');
+let userMin = document.getElementById('minute');
+let userSeconds = document.getElementById('seconds');
+
+function resetTimer() {
+    clearInterval(interval);
+    location.reload();
 }

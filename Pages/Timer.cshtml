@@ -1,18 +1,33 @@
 ﻿@page
 @model Bookclub.Pages.TimerModel
 @{
+
+    ViewData["Title"] = "Reading Timer";
+    ViewData["TimerAct"] = "active";
 }
 <h1>Reading Timer</h1>
 <p>Here you can set yourself a time you'd like to read for.</p>
 
-<div class="Ring">
-    <input type="number" id="hour" class="remove" placeholder="enter the hours here" />
-    <input type="number" id="minute" class="remove" placeholder="enter the mintues here" />
-    <input type="number" id="seconds" class="remove" placeholder="enter the seconds here" />
+<div class="shadow-lg p-3 mb-5 ">
+
+    <div class="timerDiv">
+    <input type="number" id="hour" class="remove" placeholder="00h" />
+
+    <input type="number" id="minute" class="remove" placeholder="00m" />
+
+    <input type="number" id="seconds" class="remove" placeholder="00s" />
+
     <button id="startTimerButton"onclick="hideFunction()">Set Timer</button>
     <button id="stopTimerButton">Stop Timer</button>
+    <button id="resetTimerButton" onclick="resetTimer()">Reset</button>
+
     <p id="theTimer"></p>
+
 </div>
+
+
+</div>
+
 
 
 

@@ -1,0 +1,34 @@
+﻿@page
+@model Bookclub.Pages.NonfictioncshtmlModel
+@{
+
+}
+<div class="SearchBar"> 
+
+<form method="post">
+        <input type="text" asp-for="@Model.user_searches_for" placeholder="Search a book...">
+        <div class="searchIcon">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+       
+</form>
+</div>
+
+
+
+@foreach (var bookProduct in Model.book)
+{
+    <div class="bookView">
+        <a asp-page="/@bookProduct.pageRef">
+            <img src="~/Images/books/@bookProduct.BookImage" alt="@bookProduct.imageAltDesc" />
+        </a>
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="deletebook" asp-page-handler="Book" asp-route-id="@bookProduct.BooksID">Delete</a>
+        <a class="updateBook" asp-route-id="@bookProduct.BooksID" asp-page="/ManageBooks">Update</a>
+    }
+}
+

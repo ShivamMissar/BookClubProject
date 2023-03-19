@@ -12,14 +12,12 @@ function closeNavigationSide() {
 }
 
 
-let darkTheme = localStorage.getItem("darkmode");
-var themeButton = document.querySelector('#changeTheme');
 
 
 
 
 
-/*
+
 
 var accordian = document.getElementsByClassName("questionToBeAnswered"); // this is  an array and therefore, the contents of the array need to be traversed.
 for (i = 0; i < accordian.length; i++)
@@ -41,24 +39,9 @@ for (i = 0; i < accordian.length; i++)
 
 
 
-document.getElementById('accordian').addEventListener("click", changeArrow);
-
-function changeArrow() {
-    var Down = document.getElementById('arrowDown');
-    Down.style.display = "Block";
-    var Up = document.getElementById('arrowUp');
-    if (Down.style.display == "None") {
-        Up.style.display = "None";
-        Down.style.display = "Block";
-    }
-    else {
-        Down.style.display = "None";
-        Up.style.display = "Block";
-    }
-}
 // this is local storage api which will allow the users preference of dark mode/light to be saved so that whenever they come back onto the website it will show their saved preference.
 
-*/
+
 
 // local storage for colors:
 
@@ -117,4 +100,38 @@ else if (localStorage.getItem('Theme') == 'Pink')
 }
 else {
     enableGreyTheme();
+}
+
+
+
+function show()
+{
+    var show_input = document.getElementById('showForm');
+   
+   
+    if (show_input.style.display === "none")
+    {
+        show_input.style.display = "block";
+    }
+    else {
+        show_input.style.display = "none";
+    }
+}
+
+
+
+//function will be used to display a return message if the user has clicked the button for the reporting
+
+
+function buttonClicked()
+{
+    let button = document.getElementById("reportbutton");
+    let message = document.getElementById("returnMessage");
+
+
+    if (button.click) {
+        button.style.display = "none";
+        message.innerHTML = "Thank you for your feedback"
+    }
+
 }

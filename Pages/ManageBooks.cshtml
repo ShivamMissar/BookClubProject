@@ -1,0 +1,54 @@
+﻿@page
+@model Bookclub.Pages.ManageBooks
+@{
+    ViewData["Title"] = "New Books";
+    ViewData["BooksAct"] = "active";
+}
+
+<h1>Add a new book </h1>
+
+
+
+<form method="post" class="addBooksForm" asp-page="/ManageBooks">
+  
+    
+   
+        @* This will check to see if the url has a value such as if the admin has clicked update and if this is true,
+        it will display the Id of the product *@
+
+        <label asp-for="@Model.book.BooksID"></label>
+         <input readonly type="text" asp-for="@Model.book.BooksID" />
+    
+        <label asp-for="@Model.book.BookName"></label>
+        <input type="text" asp-for="@Model.book.BookName" autofocus placeholder="Enter the book name here." />
+        
+    
+   
+        <label asp-for="@Model.book.BookImage"></label>
+        <input type="text" asp-for="@Model.book.BookImage" placeholder="Enter the book image URL here." />
+    
+    
+        <label asp-for="@Model.book.imageAltDesc"></label>
+        <input type="text" asp-for="@Model.book.imageAltDesc" placeholder="Enter the image alt description here." />
+   
+        <label asp-for="@Model.book.BooksDescription"></label>
+        <input type="text" asp-for="@Model.book.BooksDescription" placeholder="Enter the book description here." />
+
+        <label asp-for="@Model.book.pageRef"></label>
+        <input type="text" asp-for="@Model.book.pageRef" placeholder="Enter the page link here." />
+
+
+
+    @{
+        if (Model.url)
+        {
+            <input type="submit" class="addBooksSubmit" asp-page-handler="Update" asp-route-id="@Model.book.BooksID" value="Store" />
+        }
+        else
+        {
+            <input type="submit" class="addBooksSubmit" value="Store "/>
+        }
+    }
+
+</form>
+

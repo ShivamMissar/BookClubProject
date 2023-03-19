@@ -16,10 +16,29 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #F9F9F9;
-    overflow-x: hidden;
+    overflow-x:hidden;
     scroll-behavior:smooth;
 }
-
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+}
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
 
 .titleSection {
     width: auto;
@@ -29,18 +48,17 @@ body {
     color: #f9f9f9;
 }
 
-.mainTitle h1 {
-    font-family: 'Brittany Signature', sans-serif;
-    color: #f9f9f9;
-   position:relative;
-   top:20px;
-    font-size: 45px;
-    text-decoration: none;
-    text-align:center;
-}
-
 .titleSection a {
     text-decoration: none;
+}
+
+.titleSection .imageTitle img
+{
+    width:30%;
+    right:10px;
+    position:relative;
+    align-content:center;
+    top:-180px;  
 }
 
 .active {
@@ -70,6 +88,7 @@ body {
     color: white;
     text-decoration: none;
     transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-side .closeNavButton {
@@ -161,18 +180,19 @@ body {
     left: 10px;
     font-size: 35px;
     color: white;
-    font-weight:100
+    font-weight:100;
 }
 .dailyInsperation img {
     
     width: 120%;
     position: relative;
     right:10%;
+    top:-47px;
+    margin-bottom:-420px
 }
 
 .dailyTitle {
     text-align: center;
-    font-family: sans-serif;
     color: white;
 }
 .dailyQuotesBackground {
@@ -180,8 +200,7 @@ body {
     width: 82%;
     height: 350px;
     position: relative;
-    
-    top: -800px;
+    top: -500px;
     left: 100px;
     opacity: 0.9;
     border: 4px solid black;
@@ -208,28 +227,6 @@ body {
         color: white;
     }
 
-.books_read_type {
-    background-color: lightslategray;
-    width: 94%;
-    margin-left: 46px;
-    height: 200px;
-}
-
-.books_read_Fiction {
-    background-color: lightslategray;
-    width: 94%;
-    margin-left: 46px;
-    height: 200px;
-    margin-top: 10px;
-}
-
-.books_read_NonFiction {
-    background-color: lightslategray;
-    width: 94%;
-    margin-left: 46px;
-    height: 200px;
-    margin-top: 10px;
-}
 
 .title_previews {
     text-align: center;
@@ -240,8 +237,8 @@ body {
 .timeline_intro img {
     width: 120%;
     position: relative;
-    right: 100px;
-    top: -49px;
+    right: 120px;
+    top: -46px;
     opacity: 0.7;
     height: 800px;
 }
@@ -255,11 +252,12 @@ body {
     font-size: 54px;
     text-align: center;
     left: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
 }
 
 .timeline_intro p {
-    font-family: 'Courier New';
-    font-weight: 100;
+   
     color: white;
     position: relative;
     top: 150px;
@@ -273,7 +271,7 @@ body {
     width: 62%;
     height: 550px;
     position: relative;
-    top: -600px;
+    top: -597px;
     opacity: 0.9;
     border-top-right-radius: 300px;
 }
@@ -352,57 +350,48 @@ body {
     width: 100%;
     text-align: left;
 }
-.questionToBeAnswered h2 {
-    font-size:24px;
-    margin-top:10px;
-    
-   
+
+.questionToBeAnswered:hover
+{
+    background-color:#ccc;
+    color: #D55E2D;
 }
 
- .questionToBeAnswered:hover {
-        color: #D55E2D;
-    }
 
+.questionToBeAnswered h2 
+{
+    font-size:24px;
+    margin-top:10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight:500;
+}
 .answerForQuestions
 {
     overflow:hidden;
     /* should not be displayed until clicked*/
-    display:none;
-    
+    display:none;   
 }
 
-#arrowDown
-{
-    position:relative;
-    left:96%;
-    top:-30px;
-    font-size:23px;
-    
-    
-}
-#arrowUp {
-    position: relative;
-    left: 96%;
-    top: -30px;
-    font-size: 23px;
-    display:none;
-}
-.minus
-{
-    display:none;
-}
 
-.processOfJoining h2{
-    font-family: sans-serif 'Modern No. 20';
-    text-align:center;
-    font-size:24px;
-    padding:10px;
 
+
+.processOfJoining h2 {
+   
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+   font-size:30px; 
+  
 }
 .processOfJoining a 
 {
-   font-family: sans-serif 'Modern No. 20';
+ 
    text-decoration:none;
+   
+}
+a:hover
+{
+    color:#D55E2D;
 }
 
 
@@ -435,6 +424,8 @@ body {
     height: 500px;
     width:50%;
     padding:10px;
+   
+    font-weight:500;
 }
 
 .mh_lonely
@@ -555,9 +546,9 @@ body {
     font-size:17px;
     margin-bottom:50px;
 }
-.center_content h2{
-    text-align:center;
-   
+.center_content h2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
 }
 .center_content h3 {
     text-align: center;
@@ -634,58 +625,63 @@ input[type=submit] {
 
 }
 
-.Ring {
-    background-color: #d8d8d6;
-    border-radius: 50%;
-    height: 550px;
-    width: 45%;
-    margin-left: 340px;
-    border: 4px solid #D55E2D;
+.timerDiv {
+
+    display:inline-block;
+    width:100%;
    
 }
 .hideInputs
 {
     display:none;
 }
-.Ring input[type=number]
+.timerDiv input[type=number]
 {
-    margin-left:70px;
+    margin-left:10px;
     margin-top:100px;
     padding:2px;
     font-size:20px;
-    width:75%;
+    width:15%;
+    text-align:center;
     border:none;
     border-radius:10px;
+    background:none;
     
 }
-.Ring input[type=number]::placeholder {
- font-size: 15px;
-  text-align: center;
-
-}
-
-.Ring p
+.timerDiv input[type=number]::placeholder 
 {
-   color:black;
-   font-size:50px;
-   margin-left:105px;
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  color:black;
 }
 
-.Ring button
+.timerDiv p {
+    color: white;
+    text-align: center;
+   
+    font-size: 50px;
+    width: 40%;
+    position: relative;
+    left: 400px;
+    top: 50px;
+    margin-bottom: 100px;
+    border-radius: 60px;
+}
+
+.timerDiv button
 {
     border:none;
     margin-top:20px;
-    margin-left:200px;
+    margin-left:0px;
+    background-color:orange;
     padding:4px;
-    width:30%;
+    width:15%;
     border-radius:7px;
 }
-.Ring button:hover 
+.timerDiv button:hover 
 {
     background-color:black;
     color:white;
-
 }
 
 
@@ -756,35 +752,61 @@ input[type=submit] {
     text-align: center;
 }
 /* MOOD color classes*/
-.Simplicity
-{
-    background-color:white;
-    color:black;
+.Simplicity {
+    background-color: #FAF9F6;
+    color: black;
+}
+.Simplicity input[type=text] {
+    color: black;
+    border:2px solid black;
+}
+.Simplicity p {
+    color: black;
+    font-weight:400;
 }
 
 .Relaxation {
     background-color: #43A6C6;
 }
-
+.Relaxation a {
+    color:black;
+}
+.Relaxation p {
+    font-weight:400;
+}
 .Realism {
     background-color: #c0c0c0;
     color:black;
+}
+.Realism p {
+   font-weight:400;
 }
 
 .Friendliness {
     background-color: #ffc0cb;
 }
 
+.Friendliness input[type=text] {
+    border:2px solid black;
+}
+.Friendliness p {
+   font-weight:400;
+}
+
 .moodDropDown {
+   font-size:14px;
+    font-family: 'Montserrat', sans-serif;
+    
     position: relative;
-    left: 42%;
-    top: -35%;
+    left: 40%;
+    top: -464%;
     padding: 5px;
     overflow: hidden;
-    cursor:pointer;
+    cursor: pointer;
     color: black;
-    width: 210px;
-    outline:none;
+    width: 255px;
+    outline: none;
+    z-index: 1;
 }
 
 moodDropDown:hover
@@ -794,3 +816,478 @@ moodDropDown:hover
 
 
 
+.about-heading {
+    
+    width:100%;
+}
+.about-heading h1 {
+    position: relative;
+    color: white;
+    top: -500px;
+    left: 100px;
+    font-size: 64px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+        
+}
+.about-heading img /*image taken from: */{
+    height:600px;
+    width:100%;
+    object-fit:cover;
+}
+
+
+.Mission
+{
+   background-color:#a0b3c1;
+   float:left;
+   margin-right:10px;
+   white-space:nowrap;
+   height:400px;
+   width:400px;
+   border-bottom-right-radius:200px;
+}
+
+.Links {
+    background-color: #a0b3c1;
+    height: 400px;
+    display: inline-block;
+
+    width: 400px;
+    border-top-left-radius:200px;
+}
+
+.History {
+    background-color: #a0b3c1;
+    height: 400px;
+    margin-right: 10px;
+    width: 400px;
+    display: inline-block;
+    border-top-right-radius:200px;
+}
+.History h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    font-size:30px;
+    padding:3px;  
+}
+
+.Links h2 {
+    position: relative;
+    left: 190px;
+    padding-top:3px;
+    font-size:30px;
+    font-family:'Montserrat', sans-serif;
+    font-weight:400;
+}
+
+.Mission h2 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding:3px;
+}
+
+.Acontainer
+{
+    width:100%;
+    margin-left:20px;
+}
+
+.addBooksForm 
+{
+    display:block;
+    padding:1px;
+    position:relative;
+    left:36%;
+    width:100%;
+}
+.addBooksForm input {
+    display: block;
+    margin-bottom:10px;
+    padding: 5px;
+    width:30%;
+    padding-top:10px;
+    border-radius:3px;
+    border:none;
+    outline:none;
+}
+.addBooksForm label {
+    font-family: 'Montserrat', sans-serif;
+   
+    font-size:14.5px;
+    display: block;
+}
+.addBooksForm textarea {
+     font-family: 'Montserrat', sans-serif;
+    resize:none;
+    border:none;
+    border-radius:4px;
+    width:30%;
+    outline:none;
+}
+.addBooksForm input[type=text]:focus
+{
+  border:2px solid #D55E2D;
+}
+.addBooksForm textarea:focus {
+    border: 2px solid #D55E2D;
+}
+
+
+.others img {
+    position: relative;
+    top: -500px;
+    left: 36px;
+    width: 94%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.others img:hover {
+    border: 5px solid black;
+    transition: border-width 0.1s linear;
+}
+.others h2 {
+    z-index: 1;
+    position: relative;
+    left: 100px;
+    color: white;
+    top: -100px;
+    font-size: 40px;
+}
+
+.Non-fiction img {
+    position: relative;
+    width: 94%;
+    height: 600px;
+    object-fit: cover;
+    left: 36px;
+    top: -500px;
+}
+.Non-fiction h2 {
+    z-index: 1;
+    position: relative;
+    left: 100px;
+    color: white;
+    top: -10px;
+    font-size: 40px;
+    
+}
+.Non-fiction img:hover {
+    border: 5px solid black;
+    transition:border-width 0.1s linear;
+}
+
+.fiction img {
+    position: relative;
+    width: 94%;
+    height: 600px;
+    object-fit: cover;
+    left: 36px;
+    top: -500px;
+}
+.fiction h2 {
+    z-index: 1;
+    position: relative;
+    left: 100px;
+    color: white;
+    top: -10px;
+    font-size: 40px;
+    
+}
+.fiction img:hover {
+    border: 5px solid black;
+    transition:border-width 0.1s linear;
+}
+
+.bookView
+{
+    display:inline-block;
+    height:500px;
+    position:relative;
+    left:44px;
+}
+.bookView a 
+{
+    align-content:end;
+    margin-left:60px;
+    text-decoration: none;
+    height:100px;
+   
+    font-size:18px;
+    margin-bottom:8px;
+    color: black;
+    width:120%;
+}
+.bookView img  {
+    width:220px;
+    height:auto;
+}
+.bookView a:hover{
+    object-fit:contain;
+    outline: 4px solid black; 
+}
+
+.deletebook
+{
+   position:relative;
+   top: 200px;
+   left:-180px;
+    border:none;
+    background-color:red;
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    border-radius:3px;
+
+
+}
+.updateBook {
+    border: none;
+    position: relative;
+    top: 200px;
+    left: -100px;
+    padding: 10px;
+    text-decoration:none;
+    background-color:mediumseagreen;
+    border-radius: 3px;
+    color:white;
+}
+.updateBook:hover
+{
+    background-color:darkgreen;
+    color:white;
+}
+
+.deletebook:hover
+{
+    background-color:darkred;
+    color:white;
+   
+}
+
+.googleReviews {
+    background-color: #FAF9F6;
+    border-radius: 5px;
+}
+
+
+#bookViewImage 
+{
+    width:80%;
+}
+
+.bookViewDesc
+{
+    position:relative;
+    left:500px;
+    top:-500px;
+}
+
+.reviewTitle
+{
+
+}
+
+.reviewButton
+{
+    text-decoration:none;
+    float:right;
+    position:relative;
+    top:-40px;
+    right:100px;
+    background-color:orange;
+    border:none;
+    height:45px;
+    color:black;
+    width:16%;
+    text-align:center;
+    border-radius:10px;
+    padding:10px;
+    clear:both;
+}
+.reviewButton:hover
+{
+    background-color:darkorange;
+    color:black;
+}
+#showForm
+{
+    display:none;
+}
+
+.socialsFooter
+{
+    width:100%;
+    margin-top:20px;
+    margin-left:42.5%;
+    padding-left:3px;
+}
+.socialsFooter a
+{
+
+    margin-right:20px;
+    text-decoration:none;
+}
+
+.socialsFooter a:visited
+{
+    color:black;
+    text-decoration:none;
+}
+.socialsFooter a:hover
+{
+    color:#D55E2D;
+   
+}
+
+
+.add_reviews
+{
+    margin-top:20px;
+    position:relative;
+    border-radius:20px;
+    text-align:center;
+    background-color:#a0b3c1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   
+}
+
+
+.add_reviews form
+{
+    padding:10px;
+   
+}
+
+.add_reviews input[type=text]
+{
+    padding:1px;
+    margin-top:10px;
+    margin-bottom:100px;
+    width:40%;
+     font-family: 'Montserrat', sans-serif;
+    border:none;
+    padding:9px;
+    position:relative;
+    left:0px;
+    outline:none;
+    border-radius:100px;
+
+}
+
+.add_reviews #nameLabel
+{
+  display:block;
+  font-family: 'Montserrat', sans-serif;
+  font-size:17px;
+  margin-left:0px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.add_reviews #messageLabel
+{
+  display:block;
+  font-family: 'Montserrat', sans-serif;
+  font-size:17px;
+  margin-left:0px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+
+.add_reviews textarea
+{
+     position:relative;
+      font-family: 'Montserrat', sans-serif;
+
+     left:-220px;
+     width:50%;
+     height:200px;
+     border:none;
+     border-radius:10px;
+     margin-bottom:100px;
+     outline:none;
+}
+
+.add_reviews input[type=submit]
+{
+     background-color:orange;
+     padding:10px;
+     font-size:19px;
+      font-family: 'Montserrat', sans-serif;
+     color:black;
+}.add_reviews input[type=submit]:hover
+{
+     background-color:#D55E2D;
+}
+
+
+.deleteReviews
+{
+    float:right;
+    text-decoration:none;
+    background-color:red;
+    color:white;
+    padding:8px;
+    border-radius:10px;
+    margin-top:-80px;
+    margin-right:90px;
+
+}
+.deleteReviews:hover 
+{
+    background-color:darkred;
+    color:white;
+  
+}
+
+.zoom
+{
+   
+    height:auto;
+    margin-bottom:150px;
+}
+
+.crop
+{
+    background-color:black;
+    width:100%;
+    height:600px;
+  
+}
+
+.SearchBar
+{
+    margin-bottom:100px;
+    width:100%;
+
+}
+
+.SearchBar input[type=text]
+{
+    padding:5px;
+    width:60%;
+    outline:none;
+    border-color:#D55E2D;
+    border-radius:50px;
+    margin-left:230px;
+}
+
+.SearchBar input[type=submit]
+{
+    padding:4px;
+    width:200px;
+  
+    border-radius:50px;
+    margin-left:-332px;
+}
+
+.searchIcon
+{
+    position:relative;
+    top:-32px;
+    left:948px;
+    font-size:18px;    
+}

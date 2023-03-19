@@ -16,16 +16,29 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bookclub.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/media.css" asp-append-version="true" />
     <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
     <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet" />
+
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <section class="titleSection">
-            <a href="/Index" class="mainTitle">
-                <h1>Between 2 lines</h1>
-            </a>
+            <div class="imageTitle">
 
+                <img src="~/images/between 2 lines-logos_white.png" />
+            </div>
+           
+           
             <select id="mood" class="moodDropDown"> 
                 <option selected disabled>Mood based background color</option>
                 <option value="White">Simplicity</option>
@@ -40,21 +53,23 @@
         </section>
         <section class="NavigationSection">
             <h2 onclick="openNavigationSide()" class="hamburgerIcon">&#9776;</h2>
-            
+
+            <!-- Icons taken from: https://fontawesome.com/icons/circle-info?s=solid&f=classic-->
+
             <nav class="nav-side" id="sideNav">
                 <a href="javascript:void(0)" class="closeNavButton" onclick="closeNavigationSide()">&times;</a>
-                <a class=@ViewData["HomeAct"] href="/Index">Home</a>
-                <a class=@ViewData["MHAct"] href ="/Mentalhealth">MentalHealth</a>
-                <a class=@ViewData["FAQAct"] href="/FAQ">FAQs</a>
-                <a class=@ViewData["TimeLineAct"] href="/TimeLine">Books read</a>
-                <a class=@ViewData["ContactAct"] href ="/Contact">Contact</a>
-                <a class=@ViewData["AboutAct"] href="/About">About</a>
+                <a class=@ViewData["HomeAct"] href="/Index">Home <i class="fa-sharp fa-solid fa-house"></i></a>
+                <a class=@ViewData["MHAct"] href="/Mentalhealth">MentalHealth <i class="fa-solid fa-heart-pulse"></i></a>
+                <a class=@ViewData["FAQAct"] href="/FAQ">FAQs <i class="fa-solid fa-person-circle-question"></i></a>
+                <a class=@ViewData["TimeLineAct"] href="/booksread">Books read <i class="fa-solid fa-book-open"></i></a>
+                <a class=@ViewData["ContactAct"] href="/Contact">Contact <i class="fa-solid fa-envelope"></i></a>
+                <a class=@ViewData["AboutAct"] href="/About">About <i class="fa-solid fa-circle-info"></i></a>
 
                 <!--Member pages but the admin can also access these pages. -->
                 @if (User.IsInRole("Member") && Context.User.Identity.IsAuthenticated == true || User.IsInRole("Admin") && Context.User.Identity.IsAuthenticated == true)
                 {
-                 <a href="/Timer">Timer</a>
-                 <a href="/Meetings">Meetings</a>
+                    <a class="@ViewData["TimerAct"]" href="/Timer">Timer <i class="fa-solid fa-clock"></i></a>
+                    <a class="@ViewData["MeetingsAct"]" href="/Meetings">Meetings <i class="fa-solid fa-phone"></i></a>
                 }
                
                
@@ -62,7 +77,10 @@
                 <!--Admin pages only-->
                 @if (User.IsInRole("Admin") && Context.User.Identity.IsAuthenticated == true)
                 {
-                    <a href="/UserManagement">AdminPage</a>
+                    <a class="@ViewData["UserManageAct"]" asp-page="/UserManagement">AdminPage <i class="fa-solid fa-users"></i></a>
+                    <a class="@ViewData["BooksAct"]" asp-page="/ManageBooks">Manage Books <i class="fa-solid fa-gear"></i></a>
+                    <a class="@ViewData["EventsAct"]" asp-page="/AddEvents">Add Event <i class="fa-solid fa-gear"></i></a>
+              
                 }
                 
                 <partial name="_LoginPartial" />
@@ -86,6 +104,34 @@
         <ul >
             <li><a href="/Privacy">Privacy Policy</a></li>
         </ul>
+
+        <div class="socialsFooter">
+
+            <a href="https://www.instagram.com/" target="_blank">
+
+                <i class="fa-brands fa-instagram fa-2x"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/" target="_blank">
+
+                <i class="fa-brands fa-facebook fa-2x"></i>
+            </a>
+       
+            <a href="https://twitter.com/" target="_blank">
+
+                <i class="fa-brands fa-twitter fa-2x"></i>
+                
+            </a>
+            
+            <a href="https://uk.linkedin.com/" target="_blank">
+
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+
+            </a>
+        </div>
+      
+
+
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

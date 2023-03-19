@@ -1,6 +1,8 @@
 ﻿@page
 @model Bookclub.Pages.ContactModel
 @{
+    ViewData["Title"] = "Contact";
+    ViewData["ContactAct"] = "active";
 }
 
 <h1>Contact Form</h1>
@@ -12,7 +14,7 @@
         <input type="text" asp-for="@Model.subject" autofocus placeholder="Enter the subject of matter" />
 
         <label asp-for="@Model.email"></label>
-        <input type="text" asp-for="@Model.email" autocomplete="on" placeholder="enter your email" />
+        <input type="text" asp-for="@Model.email" placeholder="enter your email" />
 
         <div class="bodyInput">
             <label asp-for="@Model.body"></label>
@@ -22,8 +24,17 @@
 
 
         <input type="submit" />
-
+       
     </form>
+    <br />
+    @if (Model.checker)
+    {
+        <div class="alert alert-success" role="alert">
+            Your email has successfully been sent!
+        </div>
+        
+    }
+   
 
 </div>
 

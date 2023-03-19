@@ -1,0 +1,45 @@
+﻿@page
+@model Bookclub.Pages.OtherGenres
+@{
+}
+
+@*
+Shadow of gods book image taken from : https://www.amazon.co.uk/Shadow-Gods-Bloodsworn-Saga/dp/0356514218/ref=asc_df_0356514218/?tag=googshopuk-21&linkCode=df0&hvadid=463387925509&hvpos=&hvnetw=g&hvrand=16769461411001092121&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9046398&hvtargid=pla-986854541890&psc=1&th=1&psc=1
+
+ignite me : https://www.amazon.co.uk/Ignite-Me-Shatter-Tahereh-Mafi-ebook/dp/B08F3BMKJX
+
+The name of the wind: https://www.amazon.co.uk/Name-Wind-Kingkiller-Chronicle/dp/0575081406
+
+Mageborn : https://www.amazon.co.uk/Name-Wind-Kingkiller-Chronicle/dp/0575081406
+
+The Secret Refuge : https://www.amazon.co.uk/Secret-Refuge-Path-Ranger-Book-ebook/dp/B0872DF6CD/ref=sr_1_18_sspa?keywords=fantasy+books+for+adults&qid=1677487579&s=books&sprefix=fantasy%2Cstripbooks%2C76&sr=1-18-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGZfbmV4dA&psc=1
+
+
+*@
+
+<div class="SearchBar"> 
+
+<form method="post">
+        <input type="text" asp-for="@Model.user_searches_for" placeholder="Search a book...">
+        <div class="searchIcon">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+       
+</form>
+</div>
+
+    @foreach(var bookProduct in Model.book){
+    <div class="bookView">
+        <a asp-page="/BookPage">
+            <img src="~/Images/books/@bookProduct.BookImage" alt="@bookProduct.imageAltDesc"/> 
+        </a>
+    </div>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="deletebook" asp-page-handler="Book" asp-route-id="@bookProduct.BooksID">Delete</a>
+        <a class="updateBook" asp-route-id="@bookProduct.BooksID" asp-page="/ManageBooks">Update</a>
+    }
+}

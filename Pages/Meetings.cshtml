@@ -1,4 +1,20 @@
 ﻿@page
 @model Bookclub.Pages.MeetingsModel
 @{
+
+
 }
+
+
+<h1> Join a meeting from here </h1>
+@*taken from: https://amplifyplugins.com/zoom-livestream/ *@
+<div class="zoom">
+
+   <div class="iframe-container" 
+        style="overflow: hidden; padding-top: 36.25%; position: relative;"> 
+        <iframe allow="microphone; camera" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%;" src="https://success.zoom.us/wc/join/{meeting-id}" 
+        frameborder="0"></iframe> 
+    </div>
+
+
+</div>

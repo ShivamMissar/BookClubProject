@@ -14,5 +14,6 @@ namespace Bookclub.Models
         public string BookImage { get; set; }
 
         public string imageAltDesc { get; set; }
+        public string pageRef { get; set; }
     }
 }

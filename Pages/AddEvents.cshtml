@@ -1,0 +1,45 @@
+﻿@page
+@model Bookclub.Pages.AddEventsModel
+@{
+
+
+
+}
+
+<h1> Create a new upcoming event </h1>
+
+
+
+<form method="post" class="addBooksForm" asp-asp-page="/AddEvents">
+
+
+
+
+    <label asp-for="@Model.addNewEvent.EventsId"></label>
+    <input readonly type="text" asp-for="@Model.addNewEvent.EventsId" />
+
+
+
+    <label asp-for="@Model.addNewEvent.NameOfEvent"></label>
+    <input type="text" asp-for="@Model.addNewEvent.NameOfEvent" autofocus placeholder="Enter the book name here." />
+
+
+
+
+    <label asp-for="@Model.addNewEvent.Date"></label>
+    <input type="datetime" asp-for="@Model.addNewEvent.Date" placeholder="Enter the book image URL here." />
+
+
+
+    <label asp-for="@Model.addNewEvent.BriefDescription"></label>
+    <input type="text" asp-for="@Model.addNewEvent.BriefDescription" placeholder="Enter the image alt description here." />
+
+  
+
+   <input type="submit" class="addBooksSubmit" value="Create Event" />
+      
+
+</form>
+
+
+

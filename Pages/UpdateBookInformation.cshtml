@@ -1,0 +1,32 @@
+﻿@page
+@model Bookclub.Pages.UpdateBookInformationModel
+@{
+    ViewData["Title"] = "Update Book";
+    ViewData["UpdateAct"] = "active";
+}
+
+<form method="post" class="addBooksForm">
+    @* this will display the id of the current selected product*@
+    <label asp-for="@Model.book.BooksID"></label>
+    <input readonly type="text" asp-for="@Model.book.BooksID"/>
+
+    <label asp-for="@Model.book.BookName"></label>
+    <input type="text" asp-for="@Model.book.BookName" />
+
+    <label asp-for="@Model.book.BookImage"></label>
+    <input type="text" asp-for="@Model.book.BookImage" />
+
+    <label asp-for="@Model.book.imageAltDesc"></label>
+    <input type="text" asp-for="@Model.book.imageAltDesc" />
+
+    <label asp-for="@Model.book.BooksDescription"></label>
+    <input type="text" asp-for="@Model.book.BooksDescription" />
+
+    <label asp-for="@Model.book.pageRef"></label>
+    <input type="text" asp-for="@Model.book.pageRef" />
+
+  
+    <input type="submit" class="addBooksSubmit" value="Store"/>
+
+
+</form>

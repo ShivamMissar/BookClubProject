@@ -9,5 +9,11 @@ namespace Bookclub.Models
         public AppDataContext(DbContextOptions<AppDataContext> options) : base(options) { }
 
         public DbSet<Books> Books { get; set; }
+        public DbSet<Reviews> Reviews { get; set; }
+
+        public DbSet<Events> Events { get; set; }
+
+
+
     }
 }
