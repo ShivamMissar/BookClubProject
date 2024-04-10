@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace Bookclub.Models
 {
@@ -8,7 +9,7 @@ namespace Bookclub.Models
        
             public int EventsId;
 
-            public DateTime Date { get; set; }
+            public DateTime DateOfEvent { get; set; }
 
             public string NameOfEvent { get; set; }
 

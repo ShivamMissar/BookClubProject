@@ -2,7 +2,8 @@
 @model Bookclub.Pages.AddEventsModel
 @{
 
-
+    ViewData["Title"] = "Create Event";
+    ViewData["EventsAct"] = "active";
 
 }
 
@@ -10,7 +11,7 @@
 
 
 
-<form method="post" class="addBooksForm" asp-asp-page="/AddEvents">
+<form method="post" class="createEventsForm" asp-asp-page="/AddEvents">
 
 
 
@@ -26,8 +27,8 @@
 
 
 
-    <label asp-for="@Model.addNewEvent.Date"></label>
-    <input type="datetime" asp-for="@Model.addNewEvent.Date" placeholder="Enter the book image URL here." />
+    <label asp-for="@Model.addNewEvent.DateOfEvent"></label>
+    <input type="date" asp-for="@Model.addNewEvent.DateOfEvent" placeholder="Enter the book image URL here." />
 
 
 
@@ -36,7 +37,7 @@
 
   
 
-   <input type="submit" class="addBooksSubmit" value="Create Event" />
+   <input type="submit" class="addEventsSubmit" value="Create Event" />
       
 
 </form>

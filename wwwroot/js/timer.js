@@ -7,7 +7,7 @@ let interval;
 const stop = document.getElementById('stopTimerButton');
 const start = document.getElementById('startTimerButton');
 const reset = document.getElementById('resetTimerButton');
-
+let timerFinshed = new Audio("C:\Users\shiva\OneDrive\Desktop\FYP\FYP\Bookclub\wwwroot\Daybreak.mp3");
 // these are let because their values will be changed.
 
 
@@ -22,6 +22,10 @@ function startTimer() {
         userHour.value = 0;
         userMin.value = 0;
         userSeconds.value = 0;
+        
+
+
+
     }
     // if the seconds is not 0 then decrement the value by 1
     else if (userSeconds.value != 0) {
@@ -46,7 +50,8 @@ function startTimer() {
 
 
     return timer.innerHTML = `${userHour.value + "h"}:${userMin.value + "m"}:${userSeconds.value + "s"}`;
-
+  
+    timerFinshed.play();
 }
 
 
@@ -54,6 +59,8 @@ start.addEventListener('click', function () {
     interval = setInterval(function () {
         startTimer();
     }, 1000);
+
+    
 });
 
 // this will pause the timer.

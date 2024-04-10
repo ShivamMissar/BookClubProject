@@ -1,7 +1,7 @@
 ﻿@page
 @model Bookclub.Pages.FictionModel
 @{
-
+    ViewData["Title"] = "The Leviathan";
 
 }
 
@@ -25,7 +25,7 @@
  @foreach(var bookProduct in Model.book)
  {
        <div class="bookView">
-        <a asp-page="/BookPage">
+        <a asp-page="/@bookProduct.pageRef">
             <img src="~/Images/books/@bookProduct.BookImage" alt="@bookProduct.imageAltDesc"/> 
         </a>
     </div>

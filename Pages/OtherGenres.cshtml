@@ -1,6 +1,7 @@
 ﻿@page
 @model Bookclub.Pages.OtherGenres
 @{
+    ViewData["Title"] = "Other genres";
 }
 
 @*
@@ -32,7 +33,7 @@ The Secret Refuge : https://www.amazon.co.uk/Secret-Refuge-Path-Ranger-Book-eboo
 
     @foreach(var bookProduct in Model.book){
     <div class="bookView">
-        <a asp-page="/BookPage">
+        <a asp-page="/@bookProduct.pageRef">
             <img src="~/Images/books/@bookProduct.BookImage" alt="@bookProduct.imageAltDesc"/> 
         </a>
     </div>

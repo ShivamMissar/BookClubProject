@@ -6,26 +6,33 @@
 }
 
 <h1>Contact Form</h1>
-<div class="shadow-lg p-3 mb-5 emailSender">
 
-    <form method="post" id="contactTeam">
 
-        <label asp-for="@Model.subject"></label>
-        <input type="text" asp-for="@Model.subject" autofocus placeholder="Enter the subject of matter" />
+    <form method="post" id="contactTeam" class="contactForm"> 
 
-        <label asp-for="@Model.email"></label>
-        <input type="text" asp-for="@Model.email" placeholder="enter your email" />
+        <label asp-for="@Model.subject">Subject</label>
+        <input asp-for="@Model.subject"  placeholder="Enter the subject of the email"/>
 
+
+
+        <label asp-for="@Model.email">Email</label>
+        <input asp-for="@Model.email"  placeholder="Enter your email to send from..." />
+
+
+
+        <label asp-for="@Model.body">Your message</label>
         <div class="bodyInput">
-            <label asp-for="@Model.body"></label>
             <textarea asp-for="@Model.body" max="500" rows="5" cols="50" placeholder="Describe your issue here."></textarea>
         </div>
-        
 
-
-        <input type="submit" />
-       
+        <input type="submit"/>
     </form>
+
+
+
+        
+       
+    
     <br />
     @if (Model.checker)
     {

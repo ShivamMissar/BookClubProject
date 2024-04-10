@@ -1,4 +1,5 @@
 using Bookclub.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,9 +9,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Bookclub.Pages
 {
+    [Authorize(Roles = "Admin")]
     public class UserManagementModel : PageModel
     {
-
+       
 
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;

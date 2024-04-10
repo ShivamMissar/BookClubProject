@@ -1,0 +1,76 @@
+﻿@page
+@model Bookclub.Pages.book2Model
+@{
+
+    ViewData["Title"] = "Lost connections";
+}
+
+
+
+@if(Model.book != null)
+{
+    <div class="bookProfile">
+            <img id="bookViewImage" src="~/Images/books/@Model.book.BookImage" alt="@Model.book.imageAltDesc"/> 
+        </div>
+        <div class="bookViewDesc">
+            <h1> @Model.book.BookName</h1>
+            <p>@Model.book.BooksDescription</p>
+        </div>
+}
+
+
+
+
+@if (User.IsInRole("Member") || User.IsInRole("Admin"))
+{
+    <h2 id="reviewTitle" class="reviewTitleSection">Reviews</h2>
+    <button class="reviewButton" id="buttonForShow" onclick="show()"> Write a review</button>
+
+    <div class="add_reviews"> 
+
+        <form method="post" id="showForm">
+            <label asp-for="@Model.customer_said.optionalName" id="nameLabel"> Enter a name you want to be seen as. If you do not want a display name leave this field empty.</label>
+            <input type="text" asp-for="@Model.customer_said.optionalName" placeholder="Enter your display name here." />
+            <div class="bodyInput">
+                <label asp-for="@Model.customer_said.message" id="messageLabel"> Enter what you would like to say</label>
+                <textarea asp-for="@Model.customer_said.message" max="500" rows="5" cols="50" placeholder="What would you like to say?"></textarea>
+            </div>
+            <input type="submit" value="Add Review" asp-page-handler="AddReview">
+        </form>
+
+
+    </div>
+} 
+}
+
+    
+
+
+@foreach(var eachReview in Model.get_reviews)
+{
+    <h3>@eachReview.optionalName</h3>
+    <p>@eachReview.message</p>
+
+
+
+
+
+    <button id="reportbutton" onclick="buttonClicked()" class="reportButton"> Report comment </button>
+    <p id="returnMessage"></p>
+
+
+   
+
+    <hr />
+
+    @if(User.IsInRole("Admin"))
+    {
+        <div>
+
+            <a class="deleteReviews" asp-page-handler="Remove" asp-route-id="@eachReview.ReviewsId">Remove comment</a>
+
+        </div>
+    }
+}
+
+

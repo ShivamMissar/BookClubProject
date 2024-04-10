@@ -135,3 +135,10 @@ function buttonClicked()
     }
 
 }
+
+
+
+// taken from : https://news.miami.edu/life/stories/2021/01/campus-book-clubs.html
+// taken from : 
+
+var imagesToDisplay = ['dummypic1.jpg', 'dummypic2.jpg'];

@@ -19,7 +19,7 @@ namespace Bookclub.Pages
         public void OnGet()
         {
             // images have a unqiue naming convention determining which page they need to be displayed on.
-            book = _db.Books.Where(p => p.BookImage.StartsWith("F") || p.BookImage.StartsWith("S") || p.BookImage.StartsWith("H"));
+            book = _db.Books.Where(p => p.BookImage.StartsWith("O_"));
         }
 
         public IActionResult OnGetBook(int Id)

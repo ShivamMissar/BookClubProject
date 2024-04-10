@@ -1,10 +1,13 @@
 using Bookclub.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Bookclub.Pages
 {
+    [Authorize(Roles = "Admin")]
     public class ManageBooks : PageModel
     {
         //need to access the Books table.
@@ -43,10 +46,7 @@ namespace Bookclub.Pages
         }
         public IActionResult OnPostUpdate(int ID)
         {
-            //_db.Books.Update(book);
-            //_db.SaveChanges();
-            //_db.Entry(book).State = EntityState.Modified;
-            //_db.SaveChanges();
+        
 
              var _book = _db.Books.Find(ID);
             _book.BookName = book.BookName;

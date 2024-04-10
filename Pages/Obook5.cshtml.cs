@@ -1,28 +1,23 @@
-using Bookclub.Migrations;
 using Bookclub.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using System.Security.Claims;
 
 namespace Bookclub.Pages
 {
-   
-    public class book1Model : PageModel
-    { 
+    public class Obook5Model : PageModel
+    {
         private readonly AppDataContext _db;
 
 
 
         public bool returnMessage { get; set; } = false;
-        public book1Model(AppDataContext db)
-           
+        public Obook5Model(AppDataContext db)
+
         {
             _db = db;
-            
+
         }
-        
+
         public Books book { get; set; }
 
 
@@ -32,21 +27,21 @@ namespace Bookclub.Pages
 
         public List<Reviews> get_reviews { get; set; } = new List<Reviews>();
 
-       
+
 
         public void OnGet()
         {
-            book = _db.Books.Where(p => p.BookImage.Contains("Paratroppers")).FirstOrDefault();
-            get_reviews = _db.Reviews.Where(p => p.bookName.Contains("Paratroppers")).ToList();
+            book = _db.Books.Where(p => p.BookImage.Contains("TheseHollowVows")).FirstOrDefault();
+            get_reviews = _db.Reviews.Where(p => p.bookName.Contains("These Hollow Vows")).ToList();
         }
 
         public IActionResult OnPostAddReview()
         {
-            const string bookType = "Paratroppers";
+            const string bookType = "These Hollow Vows";
             customer_said.bookName = bookType;
             _db.Add(customer_said);
             _db.SaveChanges();
-            return RedirectToPage("/book1");
+            return RedirectToPage("/Obook5");
         }
 
         public IActionResult OnGetRemove(int Id)
@@ -54,7 +49,7 @@ namespace Bookclub.Pages
             var findItem = _db.Reviews.Find(Id);
             _db.Reviews.Remove(findItem);
             _db.SaveChanges();
-            return RedirectToPage("/book1");
+            return RedirectToPage("/Obook5");
         }
     }
 }
